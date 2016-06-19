@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:materialize/Configuration/UserTS/role.editor.userts">

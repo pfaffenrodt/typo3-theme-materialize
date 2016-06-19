@@ -1,0 +1,12 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:vhs="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:if condition="{homePageId}=={data.uid}">
+    <f:then>
+        <f:comment>current page is homepage</f:comment>
+        <h1 id="logo-container" class="brand-logo">Logo</h1>
+    </f:then>
+    <f:else>
+        <vhs:page.link id="logo-container" class="brand-logo" pageUid="{homePageId}">Logo</vhs:page.link>
+    </f:else>
+</f:if>

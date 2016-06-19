@@ -1,0 +1,5 @@
+lib.fluidContent{
+    templateRootPaths.20 = {$resourceDir}/Private/Content/Templates/
+    partialRootPaths.20 = {$resourceDir}/Private/Content/Partials/
+    layoutRootPaths.20 = {$resourceDir}/Private/Content/Layouts/
+}

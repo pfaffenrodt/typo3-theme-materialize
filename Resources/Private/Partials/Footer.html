@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:vhs="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12 white-text">
+                <f:format.raw>{footerContent}</f:format.raw>
+            </div>
+            <f:render partial="FooterMenu" arguments="{footerNavigationPid:footerNavigationPid}"/>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+           Typo3 Theme Distribution made by <a class="brown-text text-lighten-3" href="http://pfaffenrodt.de">Pfaffenrodt</a> | CSS framework made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+    </div>
+</footer>

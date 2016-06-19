@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="materialize">
+        <header/>
+        <body>
+            <trans-unit id="default">
+              <source>Default</source>
+          </trans-unit>
+            <trans-unit id="content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="main">
+                <source>Main</source>
+            </trans-unit>
+            <trans-unit id="footer">
+                <source>Footer</source>
+            </trans-unit>
+            <trans-unit id="col1">
+                <source>1 Column</source>
+            </trans-unit>
+            <trans-unit id="col2">
+                <source>2 Column</source>
+            </trans-unit>
+            <trans-unit id="col3">
+                <source>3 Column</source>
+            </trans-unit>
+        </body>
+
+    </file>
+</xliff>

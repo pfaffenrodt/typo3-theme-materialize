@@ -1,0 +1,13 @@
+<INCLUDE_TYPOSCRIPT: source="File:EXT:fluid_styled_content/Configuration/TypoScript/Static/constants.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gridelements/Configuration/TypoScript/constants.ts">
+<INCLUDE_TYPOSCRIPT: source="DIR:./Library/" extensions="txt">
+
+
+plugin.tx_materialize{
+    settings {
+        defaultDescription = Typo3 materialize distribution
+        pageId.home = 0
+        pageId.navigation = 0
+        pageId.footer = 0
+    }
+}

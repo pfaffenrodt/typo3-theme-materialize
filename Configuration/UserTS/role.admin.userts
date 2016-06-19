@@ -1,0 +1,16 @@
+#
+# Insert into Admin User TSconfig
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:materialize/Configuration/UserTS/role.admin.userts">
+#
+options {
+    # Show page uids in page tree
+    pageTree.showPageIdWithTitle = 1
+    # Show 'nav_title' instead of 'title'
+    showNavTitle = 1
+    # Adds a clear-cache button for the system-cache
+    clearCache.system = 1
+}
+admPanel {
+    # Caching der externen TS-Files deaktivieren
+    override.tsdebug.forceTemplateParsing = 1
+}

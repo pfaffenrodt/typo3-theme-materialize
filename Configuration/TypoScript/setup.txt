@@ -1,0 +1,4 @@
+<INCLUDE_TYPOSCRIPT: source="File:EXT:fluid_styled_content/Configuration/TypoScript/Static/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gridelements/Configuration/TypoScript/setup.ts">
+<INCLUDE_TYPOSCRIPT: source="DIR:../Elements/Typoscript" extensions="setupts">
+<INCLUDE_TYPOSCRIPT: source="DIR:./Library/" extensions="setupts">

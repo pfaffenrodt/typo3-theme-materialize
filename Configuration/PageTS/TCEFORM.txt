@@ -1,0 +1,37 @@
+#place here Backend editor settings (TCE)
+
+# RTE Config
+# Doc https://docs.typo3.org/typo3cms/extensions/rtehtmlarea/Configuration/PageTsconfig/interfaceConfiguration/Index.html#rte-interface-configuration-properties
+#
+RTE {
+    default {
+
+    }
+}
+# clear typical styling
+RTE {
+    default {
+        classesAnchor >
+    }
+}
+## Klassen hinzufuegen
+RTE {
+    classes.center{
+        name = Center
+        value = text-align:center;
+    }
+    classesAnchor {
+        button {
+            titleText = Link as Button
+            type = page,url,file,mail
+            class = btn-large
+        }
+    }
+}
+RTE.default.proc.allowedClasses := addToList(center, button)
+RTE.default.showTagFreeClasses = 1
+RTE.default.buttons {
+     blockstyle.tags.div.allowedClasses := addToList(center)
+     textstyle.tags.span.allowedClasses := addToList(button)
+     link.properties.class.allowedClasses := addToList(button)
+}

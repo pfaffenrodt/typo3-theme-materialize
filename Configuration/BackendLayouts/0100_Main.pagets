@@ -1,0 +1,33 @@
+mod.web_layout.BackendLayouts {
+    main {
+        icon = EXT:materialize/ext_icon.gif
+        name = main
+        title = Main
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 3
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = LLL:EXT:materialize/Resources/Private/Language/BackendLayouts.xlf:main
+                                colPos = 0
+                                rowSpan = 2
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = LLL:EXT:materialize/Resources/Private/Language/BackendLayouts.xlf:footer
+                                colPos = 10
+                                rowSpan = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

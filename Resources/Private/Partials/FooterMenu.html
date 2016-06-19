@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:vhs="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{footerNavigationPid}">
+    <vhs:page.menu class="right hide-on-med-and-down" levels="2" pageUid="{footerNavigationPid}">
+    <f:for each="{menu}" as="item">
+        <div class="col l3 s12">
+        <h5 class="white-text">{item.linktext}</h5>
+        <f:if condition="{item.hasSubPages}">
+            <vhs:page.menu  pageUid="{item.uid}" >
+                <ul>
+                <f:for each="{menu}" as="subItem">
+                    <li><vhs:page.link class="white-text" pageUid="{subItem.uid}" >{subItem.linktext}</vhs:page.link></li>
+                </f:for>
+                </ul>
+            </vhs:page.menu>
+        </f:if>
+        </div>
+    </f:for>
+    </vhs:page.menu>
+</f:if>
