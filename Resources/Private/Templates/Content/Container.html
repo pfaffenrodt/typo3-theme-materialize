@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Content" />
+<f:section name="Configuration">
+    <flux:form id="container"  options="{group: 'Materalize'}">
+        <flux:field.checkbox name="settings.parallax" requestUpdate="true" />
+        <f:if condition="{settings.parallax}">
+            <flux:field.inline.fal name="settings.parallaxBackground"  maxItems="1" multiple="false" showThumbs="true" requestUpdate="true" />
+        </f:if>
+
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column colPos="20" name="content" />
+            </flux:grid.row>
+        </flux:grid>
+    </flux:form>
+</f:section>
+<f:section name="Preview">
+</f:section>
+<f:section name="Main">
+    <f:if condition="{settings.parallax}">
+        <div class="parallax-container valign-wrapper">
+            <div class="section">
+                <div class="container">
+                    <flux:content.render area="content" />
+                </div>
+            </div>
+            <f:if condition="{settings.parallaxBackground}">
+                <div class="parallax">
+                    {v:content.resources.fal(field: 'settings.parallaxBackground') -> v:iterator.first() -> v:variable.set(name: 'parallaxBackground')}
+                    <img src="{f:uri.image(src:'{parallaxBackground.id}', treatIdAsReference:1)}" style="display: block; transform: translate3d(-50%, 412px, 0px);"/>
+                </div>
+            </f:if>
+        </div>
+    </f:if>
+</f:section>

@@ -3,7 +3,7 @@
       data-namespace-typo3-fluid="true">
 
 <f:if condition="{footerNavigationPid}">
-    <vhs:page.menu class="right hide-on-med-and-down" levels="2" pageUid="{footerNavigationPid}">
+    <vhs:page.menu class="right hide-on-med-and-down" levels="2" pageUid="{settings.footerNavigationPid}">
     <f:for each="{menu}" as="item">
         <div class="col l3 s12">
         <h5 class="white-text">{item.linktext}</h5>

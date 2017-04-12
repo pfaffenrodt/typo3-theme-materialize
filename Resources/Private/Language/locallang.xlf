@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="materialize">
+        <header/>
+        <body>
+            <trans-unit id="flux.container">
+              <source>Container</source>
+            </trans-unit>
+            <trans-unit id="flux.container.fields.settings.parallax">
+              <source>Parallax</source>
+            </trans-unit>
+            <trans-unit id="flux.container.fields.settings.parallaxBackground">
+              <source>Parallax background</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

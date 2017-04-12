@@ -45,3 +45,11 @@ if ((float)TYPO3_version >= 7.0) { // bugfix for inline fal images in flexforms 
         )
     );
 }
+
+
+/**
+ * register extension to flux system
+ */
+\FluidTYPO3\Flux\Core::registerProviderExtensionKey('Pfaffenrodt.Materialize', 'Page');
+\FluidTYPO3\Flux\Core::registerProviderExtensionKey('Pfaffenrodt.Materialize', 'Content');
+

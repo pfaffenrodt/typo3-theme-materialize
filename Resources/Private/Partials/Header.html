@@ -1,19 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:vhs="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-        <f:render partial="Logo" arguments="{data:data,homePageId:homePageId}"/>
-        <f:if condition="{navigationPageId}">
-        <vhs:page.menu class="right hide-on-med-and-down" pageUid="{navigationPid}">
+        <f:render partial="Logo" arguments="{_all}"/>
 
-        </vhs:page.menu>
+        <v:page.menu class="right hide-on-med-and-down" pageUid="{settings.navigationPid}">
+        </v:page.menu>
 
-        <vhs:page.menu id="nav-mobile" class="side-nav" pageUid="{navigationPid}">
-
-        </vhs:page.menu>
-        </f:if>
+        <v:page.menu id="nav-mobile" class="side-nav" pageUid="{settings.navigationPid}">
+        </v:page.menu>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 </nav>

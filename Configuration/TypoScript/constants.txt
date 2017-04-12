@@ -3,6 +3,11 @@
 
 
 plugin.tx_materialize{
+    view {
+        templateRootPath = EXT:materialize/Resources/Private/Templates/
+        partialRootPath = EXT:materialize/Resources/Private/Partials/
+        layoutRootPath = EXT:materialize/Resources/Private/Layouts/
+    }
     settings {
         defaultDescription = Typo3 materialize distribution
         pageId.home = 0

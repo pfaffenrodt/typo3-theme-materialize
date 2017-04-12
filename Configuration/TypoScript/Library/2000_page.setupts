@@ -16,55 +16,24 @@ page.includeJSFooter{
     initial ={$resourceDir}/Public/JavaScript/init.js
 }
 
-page.10 = FLUIDTEMPLATE
-page.10{
-    partialRootPath = {$resourceDir}/Private/Partials
-    layoutRootPath = {$resourceDir}/Private/Layouts
-
-    variables{
-        contentMain < styles.content.get
-        contentMain.select.where = colPos = 0
-
-        contentCol1 < styles.content.get
-        contentCol1.select.where = colPos = 0
-
-        contentCol2 < styles.content.get
-        contentCol2.select.where = colPos = 1
-
-        contentCol3 < styles.content.get
-        contentCol3.select.where = colPos = 2
-
-        footerContent < styles.content.get
-        footerContent.select.where = colPos = 10
-
-        homePageId = TEXT
-        homePageId.value = {$plugin.tx_materialize.settings.pageId.home}
-        navigationPageId = TEXT
-        navigationPageId.value = {$plugin.tx_materialize.settings.pageId.navigation}
-        footerNavigationPid = TEXT
-        footerNavigationPid.value = {$plugin.tx_materialize.settings.pageId.footer}
+plugin.tx_materialize {
+    view {
+        templateRootPaths {
+            0 = EXT:materialize/Resources/Private/Templates/
+            1 = {$plugin.tx_materialize.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:materialize/Resources/Private/Partials/
+            1 = {$plugin.tx_materialize.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:materialize/Resources/Private/Layouts/
+            1 = {$plugin.tx_materialize.view.layoutRootPath}
+        }
     }
-
-    file = {$resourceDir}/Private/Templates/DefaultTemplate.html
-
-    ## Backend-Layouts map to Templates
-    file.stdWrap.cObject = CASE
-    file.stdWrap.cObject {
-        key.data = pagelayout
-
-        # default = Main
-        default = TEXT
-        default.value = {$resourceDir}/Private/Templates/DefaultTemplate.html
-
-        # Homepage
-        pagets__main < .default
-
-        # 2Columns
-        pagets__2cols = TEXT
-        pagets__2cols.value = {$resourceDir}/Private/Templates/2ColsTemplate.html
-
-        # 3Columns
-        pagets__3cols = TEXT
-        pagets__3cols.value = {$resourceDir}/Private/Templates/3ColsTemplate.html
+    settings {
+        homePageId = {$plugin.tx_materialize.settings.pageId.home}
+        navigationPageId = {$plugin.tx_materialize.settings.pageId.navigation}
+        footerNavigationPid = {$plugin.tx_materialize.settings.pageId.footer}
     }
 }
