@@ -1,2 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:materialize/Configuration/BackendLayouts" extensions="pagets">
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:materialize/Configuration/Elements/PageTS" extensions="pagets">
