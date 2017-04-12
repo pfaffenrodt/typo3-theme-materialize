@@ -1,0 +1,44 @@
+{
+    "name": "pfaffenrodt/materialize",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "keywords": [
+        "TYPO3 CMS",
+        "materialize",
+        "front-end",
+        "web"
+    ],
+    "license": [
+        "GPL-2.0+"
+    ],
+    "authors": [
+        {
+            "name": "Dimitri Pfaffenrodt",
+            "email": "dimitri@pfaffenrodt.de",
+            "role": "Developer",
+            "homepage": "http://www.pfaffenrodt.de/"
+        }
+    ],
+    "replace": {
+        "materialize": "self.version",
+        "typo3-ter/materialize": "self.version"
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "typo3/cms-core": "^7.6 || ^8.0",
+
+        "fluidtypo3/vhs": "^4.0",
+        "fluidtypo3/flux": "^8.0",
+        "fluidtypo3/fluidpages": "^4.0",
+        "fluidtypo3/fluidcontent": "^5.0",
+
+        "typo3-ter/metaseo": "^2.0",
+        "dmitryd/typo3-realurl": "^2.1",
+        "typo3-ter/static-info-tables": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pfaffenrodt\\Materialize\\": "Classes"
+        }
+    }
+}
