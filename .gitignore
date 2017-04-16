@@ -1,0 +1,13 @@
+.DS_Store
+/.idea
+/nbproject
+.project
+.settings
+*.sublime-workspace
+.sass-cache
+/bower_components
+/Resources/Public/bower_components
+
+/node_modules/
+/npm-debug.log
+/.tmp
