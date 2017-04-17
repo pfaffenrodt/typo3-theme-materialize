@@ -12,11 +12,18 @@
             <flux:form.section name="sections">
                 <flux:form.object name="section" label="{sectionTitle}">
                     <flux:field.input name="sectionTitle" label="Section title" />
-                    <flux:field.checkbox name="fullWidth" label="Full-width" />
-                    <flux:field.checkbox name="fullWidthBackground" label="Full-width background" />
-                    <flux:field.input name="backgroundColor" label="Background color" >
+                    <flux:field.select name="sectionLayout" label="Section Layout"
+                                       items="{0: 'Default', 1: 'Full width', 2: 'Parallax'}"
+                                       default="0"
+                                       requestUpdate="1"/>
+                    <flux:field.input name="backgroundColor" label="Background color">
                         <flux:wizard.colorPicker />
                     </flux:field.input>
+                    <flux:field.file name="parallaxBackground"
+                                   maxItems="1"
+                                   multiple="false"
+                                   showThumbnails="true"
+                                   requestUpdate="true" />
                 </flux:form.object>
             </flux:form.section>
         </flux:form.sheet>
@@ -42,28 +49,49 @@
     </flux:grid>
 </f:section>
 
+<f:section name="Content">
+    <v:content.render column="{iteration.index}" />
+</f:section>
+
+<f:section name="DefaultContainer">
+    <div class="container" {f:if(condition: section.backgroundColor, then:'style="background-color: {section.backgroundColor};"')}>
+        <div class="section">
+            <f:render section="Content" arguments="{_all}" />
+        </div>
+    </div>
+</f:section>
+
+<f:section name="FullWidthContainer">
+    <div class="section" {f:if(condition: section.fullWidthBackground, then:'style="background-color: {section.backgroundColor};"')}>
+        <f:render section="Content" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="ParallaxContainer">
+    <div class="parallax-container valign-wrapper">
+        <f:if condition="{section.parallaxBackground}">
+            <div class="parallax">
+                <img src="{section.parallaxBackground}" class="parallax-background"/>
+            </div>
+        </f:if>
+
+        <div class="section">
+            <div class="container">
+                <f:render section="Content" arguments="{_all}" />
+            </div>
+        </div>
+    </div>
+</f:section>
+
 <f:section name="Main">
 
     <f:for each="{sections}" as="sectionObject" iteration="iteration">
         <!-- We don't want to write sectionObject.section everytime, so we assign it to a temporary variable-->
         <v:variable.set name="section" value="{sectionObject.section}" />
-
-        <f:if condition="{section.fullWidth}">
-            <f:then>
-                <div class="container-fluid" {f:if(condition: section.fullWidthBackground, then:'style="background-color: {section.backgroundColor};"')}>
-                    <div class="section">
-                        <v:content.render column="{iteration.index}" />
-                    </div>
-                </div>
-        </f:then>
-        <f:else>
-            <div class="container" {f:if(condition: section.backgroundColor, then:'style="background-color: {section.backgroundColor};"')}>
-                <div class="section">
-                    <v:content.render column="{iteration.index}" />
-                </div>
-            </div>
-        </f:else>
-        </f:if>
-
+        <f:switch expression="{section.sectionLayout}">
+            <f:case value="1"><f:render section="FullWidthContainer" arguments="{_all}"/></f:case>
+            <f:case value="2"><f:render section="ParallaxContainer" arguments="{_all}"/></f:case>
+            <f:case default="1"><f:render section="DefaultContainer" arguments="{_all}"/></f:case>
+        </f:switch>
     </f:for>
 </f:section>
