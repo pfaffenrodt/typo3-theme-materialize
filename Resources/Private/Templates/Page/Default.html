@@ -1,22 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 <f:layout name="Page"/>
 
 <f:section name="Configuration">
-    <flux:form id="standard">
-        <flux:grid>
-            <flux:grid.row>
-                <flux:grid.column colPos="1" name="top"/>
-            </flux:grid.row>
-            <flux:grid.row>
-                <flux:grid.column colPos="0" name="main"/>
-            </flux:grid.row>
-            <flux:grid.row>
-                <flux:grid.column colPos="5" name="footer" />
-            </flux:grid.row>
-        </flux:grid>
-    </flux:form>
+    <flux:form id="default" />
+    <flux:grid>
+        <flux:grid.row>
+            <flux:grid.column colPos="2000" name="top" />
+        </flux:grid.row>
+        <flux:grid.row>
+            <flux:grid.column colPos="0" name="main" />
+        </flux:grid.row>
+        <flux:grid.row>
+            <flux:grid.column colPos="5000" name="footer" />
+        </flux:grid.row>
+    </flux:grid>
 </f:section>
 
 <f:section name="Main">
