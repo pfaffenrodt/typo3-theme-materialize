@@ -7,32 +7,43 @@
     <flux:form id="container"  options="{group: 'Materalize'}">
         <flux:field.checkbox name="settings.parallax" requestUpdate="true" />
         <f:if condition="{settings.parallax}">
-            <flux:field.inline.fal name="settings.parallaxBackground"  maxItems="1" multiple="false" showThumbs="true" requestUpdate="true" />
+            <flux:field.inline.fal name="settings.parallaxBackground"
+                                   maxItems="1"
+                                   multiple="false"
+                                   showThumbs="true"
+                                   requestUpdate="true" />
         </f:if>
-
-        <flux:grid>
-            <flux:grid.row>
-                <flux:grid.column colPos="20" name="content" />
-            </flux:grid.row>
-        </flux:grid>
     </flux:form>
+
+    <flux:form.content name="contentInContainer"/>
 </f:section>
 <f:section name="Preview">
 </f:section>
 <f:section name="Main">
     <f:if condition="{settings.parallax}">
-        <div class="parallax-container valign-wrapper">
-            <div class="section">
-                <div class="container">
-                    <flux:content.render area="content" />
+        <f:then>
+            <div class="parallax-container valign-wrapper">
+                <f:if condition="{settings.parallaxBackground}">
+                    <div class="parallax">
+                        {v:content.resources.fal(field: 'settings.parallaxBackground') -> v:iterator.first() -> v:variable.set(name: 'parallaxBackground')}
+                        <img src="{f:uri.image(src:'{parallaxBackground.id}', treatIdAsReference:1)}" class="parallax-background"/>
+                    </div>
+                </f:if>
+
+                <div class="section">
+                    <div class="container">
+                        <flux:content.render area="contentInContainer"  />
+                    </div>
                 </div>
             </div>
-            <f:if condition="{settings.parallaxBackground}">
-                <div class="parallax">
-                    {v:content.resources.fal(field: 'settings.parallaxBackground') -> v:iterator.first() -> v:variable.set(name: 'parallaxBackground')}
-                    <img src="{f:uri.image(src:'{parallaxBackground.id}', treatIdAsReference:1)}" style="display: block; transform: translate3d(-50%, 412px, 0px);"/>
+        </f:then>
+        <f:else>
+            <div class="section">
+                <div class="container">
+                    <flux:content.render area="contentInContainer"  />
                 </div>
-            </f:if>
-        </div>
+            </div>
+        </f:else>
     </f:if>
+
 </f:section>
