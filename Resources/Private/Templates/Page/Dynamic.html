@@ -8,6 +8,7 @@
 
     <!-- Make this page type configurable -->
     <flux:form id="dynamic">
+        <f:render section="Configuration" partial="Rootline" arguments="{_all}" />
         <flux:form.sheet name="sections">
             <flux:form.section name="sections">
                 <flux:form.object name="section" label="{sectionTitle}">

@@ -5,7 +5,9 @@
 <f:layout name="Page"/>
 
 <f:section name="Configuration">
-    <flux:form id="default" />
+    <flux:form id="default" >
+        <f:render section="Configuration" partial="Rootline" arguments="{_all}" />
+    </flux:form>
     <flux:grid>
         <flux:grid.row>
             <flux:grid.column colPos="2000" name="top" />
@@ -20,7 +22,6 @@
 </f:section>
 
 <f:section name="Main">
-
     <f:comment>first column without container</f:comment>
     <v:content.render column="1"/>
     <div class="section">

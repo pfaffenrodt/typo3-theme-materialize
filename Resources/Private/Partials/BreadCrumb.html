@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="Configuration">
+
+        <flux:field.checkbox name="settings.breadcrumb.enabled" label="show breadcrumb" />
+        <flux:field.input name="settings.breadcrumb.entryLevel" transform="integer" label="breadcrumb entryLevel" default="0" />
+        <flux:field.input name="settings.breadcrumb.endLevel" transform="integer" label="breadcrumb endLevel" default="-1" />
+
+</f:section>
+
+<f:section name="BreadCrumb">
+    <f:if condition="{breadCrumbItems}">
+        <nav>
+            <div class="container">
+                <div class="row nav-wrapper">
+                    <div class="col s12">
+                        <f:for each="{breadCrumbItems}" as="breadCrumbItem">
+                            <a href="{breadCrumbItem.link}" class="breadcrumb">{breadCrumbItem.linktext}</a>
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </f:if>
+</f:section>
+
+<f:section name="Main">
+    <f:if condition="{settings.breadcrumb.enabled}">
+        <v:page.breadCrumb as="breadCrumbItems"
+                           entryLevel="{settings.breadcrumb.entryLevel}"
+                           endLevel="{settings.breadcrumb.endLevel}" >
+            <f:render section="BreadCrumb" arguments="{breadCrumbItems:breadCrumbItems}" />
+        </v:page.breadCrumb>
+    </f:if>
+</f:section>
