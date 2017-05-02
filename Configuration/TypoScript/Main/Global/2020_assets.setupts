@@ -1,9 +1,10 @@
 
 plugin.tx_vhs.settings.asset {
     materializeJs {
+        naame = materializeJs
         path = EXT:materialize/Resources/Public/JavaScript/Vendor/materialize.min.js
-        standalone = 1
         type = js
+        dependencies = jQuery
     }
     materializeCss {
         path = EXT:materialize/Resources/Public/Css/materialize-theme.css
@@ -11,13 +12,17 @@ plugin.tx_vhs.settings.asset {
         type = css
     }
     jQuery {
+        name = jQuery
         path = EXT:materialize/Resources/Public/JavaScript/Vendor/jquery.min.js
         group = VendorJS
         type = js
     }
     AppInitJs {
+        name = app
         path = EXT:materialize/Resources/Public/JavaScript/init.js
         group = AppJS
         type = js
+        standalone = 1
+        dependencies = materializeJs
     }
 }
