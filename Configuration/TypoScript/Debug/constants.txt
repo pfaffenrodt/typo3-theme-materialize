@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="DIR:./Library/" extensions="txt">
+<INCLUDE_TYPOSCRIPT: source="DIR:./Global/" extensions="txt">

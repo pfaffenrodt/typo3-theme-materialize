@@ -1,2 +1,2 @@
 <INCLUDE_TYPOSCRIPT: source="DIR:./Extensions/" extensions="setupts">
-<INCLUDE_TYPOSCRIPT: source="DIR:./Library/" extensions="setupts">
+<INCLUDE_TYPOSCRIPT: source="DIR:./Global/" extensions="setupts">
