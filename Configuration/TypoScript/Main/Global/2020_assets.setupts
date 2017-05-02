@@ -21,6 +21,14 @@ plugin.tx_vhs.settings.asset {
         standalone = 1
         type = css
     }
+    materialIcons {
+        name = materialIcons
+        path = http://fonts.googleapis.com/icon?family=Material+Icons
+        external = 1
+        standalone = 1
+        rewrite = 0
+        type = css
+    }
     AppInitJs {
         name = app
         path = EXT:materialize/Resources/Public/JavaScript/init.js
