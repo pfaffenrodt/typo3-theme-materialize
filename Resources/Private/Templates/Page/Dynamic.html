@@ -9,6 +9,7 @@
     <!-- Make this page type configurable -->
     <flux:form id="dynamic">
         <f:render section="Configuration" partial="BreadCrumb" arguments="{_all}" />
+        <f:render section="Configuration" partial="Header" arguments="{_all}" />
         <flux:form.section name="sections">
             <flux:form.object name="section" label="{sectionTitle}">
                 <flux:field.input name="sectionTitle" label="Section title" />
@@ -20,6 +21,7 @@
                     <flux:wizard.colorPicker />
                 </flux:field.input>
                 <flux:field.file name="parallaxBackground"
+                                 label="LLL:parallaxBackground"
                                maxItems="1"
                                multiple="false"
                                showThumbnails="true"

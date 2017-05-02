@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <f:render partial="Logo" arguments="{_all}"/>
+
+        <v:page.menu class="right hide-on-med-and-down" pageUid="{settings.navigationPid}">
+        </v:page.menu>
+
+        <v:page.menu id="nav-mobile" class="side-nav" pageUid="{settings.navigationPid}">
+        </v:page.menu>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>

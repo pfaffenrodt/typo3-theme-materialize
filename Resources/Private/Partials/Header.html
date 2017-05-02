@@ -1,16 +1,29 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-        <f:render partial="Logo" arguments="{_all}"/>
+<f:section name="Configuration">
 
-        <v:page.menu class="right hide-on-med-and-down" pageUid="{settings.navigationPid}">
-        </v:page.menu>
+    <flux:field.select name="settings.header.Layout" label="Header Layout"
+                       items="{0: 'Default', 1: 'Parallax'}"
+                       default="0"
+                       requestUpdate="1"/>
+    <flux:field.file name="settings.header.parallaxBackground"
+                     label="LLL:settings.header.parallaxBackground"
+                     maxItems="1"
+                     multiple="false"
+                     showThumbnails="true"
+                     requestUpdate="true" />
+</f:section>
 
-        <v:page.menu id="nav-mobile" class="side-nav" pageUid="{settings.navigationPid}">
-        </v:page.menu>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
+<f:section name="Main">
+    <f:switch expression="{settings.header.Layout}">
+        <f:case value="1">
+            <f:render partial="Header/Parallax" arguments="{_all}" />
+        </f:case>
+        <f:case default="1">
+            <f:render partial="Header/Default" arguments="{_all}" />
+        </f:case>
+    </f:switch>
+</f:section>

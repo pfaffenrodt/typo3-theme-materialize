@@ -18,6 +18,12 @@
             <trans-unit id="flux.container.fields.settings.parallaxBackground">
               <source>Parallax background</source>
             </trans-unit>
+            <trans-unit id="parallaxBackground">
+              <source>Parallax background</source>
+            </trans-unit>
+            <trans-unit id="settings.header.parallaxBackground">
+              <source>Header Parallax background</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
