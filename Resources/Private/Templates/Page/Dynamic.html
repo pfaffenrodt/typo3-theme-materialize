@@ -9,25 +9,23 @@
     <!-- Make this page type configurable -->
     <flux:form id="dynamic">
         <f:render section="Configuration" partial="BreadCrumb" arguments="{_all}" />
-        <flux:form.sheet name="sections">
-            <flux:form.section name="sections">
-                <flux:form.object name="section" label="{sectionTitle}">
-                    <flux:field.input name="sectionTitle" label="Section title" />
-                    <flux:field.select name="sectionLayout" label="Section Layout"
-                                       items="{0: 'Default', 1: 'Full width', 2: 'Parallax'}"
-                                       default="0"
-                                       requestUpdate="1"/>
-                    <flux:field.input name="backgroundColor" label="Background color">
-                        <flux:wizard.colorPicker />
-                    </flux:field.input>
-                    <flux:field.file name="parallaxBackground"
-                                   maxItems="1"
-                                   multiple="false"
-                                   showThumbnails="true"
-                                   requestUpdate="true" />
-                </flux:form.object>
-            </flux:form.section>
-        </flux:form.sheet>
+        <flux:form.section name="sections">
+            <flux:form.object name="section" label="{sectionTitle}">
+                <flux:field.input name="sectionTitle" label="Section title" />
+                <flux:field.select name="sectionLayout" label="Section Layout"
+                                   items="{0: 'Default', 1: 'Full width', 2: 'Parallax'}"
+                                   default="0"
+                                   requestUpdate="1"/>
+                <flux:field.input name="backgroundColor" label="Background color">
+                    <flux:wizard.colorPicker />
+                </flux:field.input>
+                <flux:field.file name="parallaxBackground"
+                               maxItems="1"
+                               multiple="false"
+                               showThumbnails="true"
+                               requestUpdate="true" />
+            </flux:form.object>
+        </flux:form.section>
     </flux:form>
 
     <!-- Define the backend layout -->
