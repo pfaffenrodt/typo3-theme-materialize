@@ -1,8 +1,8 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/constants.txt">
+<INCLUDE_TYPOSCRIPT: source="DIR:./Extensions/" extensions="txt">
 <INCLUDE_TYPOSCRIPT: source="DIR:./Library/" extensions="txt">
 
 
-plugin.tx_materialize{
+plugin.tx_materialize {
     view {
         templateRootPath = EXT:materialize/Resources/Private/Templates/
         partialRootPath = EXT:materialize/Resources/Private/Partials/

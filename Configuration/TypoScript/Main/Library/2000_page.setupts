@@ -1,26 +1,4 @@
-page = PAGE
 
-page.includeCSS{
-    #icons= http://fonts.googleapis.com/icon?family=Material+Icons
-    materialize = {$resourceDir}/Public/Css/materialize-theme.min.css
-    #customStyle = {$resourceDir}/Public/Css/style.css
-}
-[applicationContext = Development*]
-    page.includeJSFooter.materialize = {$resourceDir}/Public/JavaScript/Vendor/materialize.js
-    page.includeJSFooter.materialize.excludeFromConcatenation = 1
-    page.includeJSFooter.materialize.disableCompression = 1
-    page.includeCSS{
-        #icons= http://fonts.googleapis.com/icon?family=Material+Icons
-        materialize = {$resourceDir}/Public/Css/materialize-theme.css
-        #customStyle = {$resourceDir}/Public/Css/style.css
-    }
-[end]
-
-page.includeJSFooterlibs{
-    jQuery = {$resourceDir}/Public/JavaScript/Vendor/jquery.min.js
-    materialize = {$resourceDir}/Public/JavaScript/Vendor/materialize.min.js
-    initial ={$resourceDir}/Public/JavaScript/init.js
-}
 
 plugin.tx_materialize {
     view {
@@ -42,19 +20,4 @@ plugin.tx_materialize {
         navigationPageId = {$plugin.tx_materialize.settings.pageId.navigation}
         footerNavigationPid = {$plugin.tx_materialize.settings.pageId.footer}
     }
-}
-lib.fluidContent {
-    templateRootPaths {
-        templateRootPaths {
-            0 = EXT:materialize/Resources/Private/Templates/ContentCore
-            1 = {$plugin.tx_materialize.view.templateRootPath}
-        }
-        partialRootPaths {
-            0 = EXT:materialize/Resources/Private/Partials/ContentCore
-            1 = {$plugin.tx_materialize.view.partialRootPath}/ContentCore
-        }
-        layoutRootPaths {
-            0 = EXT:materialize/Resources/Private/Layouts/ContentCore
-            1 = {$plugin.tx_materialize.view.layoutRootPath}/ContentCore
-        }
 }
