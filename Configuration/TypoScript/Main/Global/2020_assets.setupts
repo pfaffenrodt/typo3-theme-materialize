@@ -1,21 +1,25 @@
 
 plugin.tx_vhs.settings.asset {
+    jQuery {
+        name = jQuery
+        path = http://code.jquery.com/jquery-1.12.4.min.js
+        external = 1
+        standalone = 1
+        rewrite = 0
+        group = VendorJS
+        type = js
+    }
     materializeJs {
         naame = materializeJs
         path = EXT:materialize/Resources/Public/JavaScript/Vendor/materialize.min.js
         type = js
+        standalone = 1
         dependencies = jQuery
     }
     materializeCss {
         path = EXT:materialize/Resources/Public/Css/materialize-theme.css
         standalone = 1
         type = css
-    }
-    jQuery {
-        name = jQuery
-        path = EXT:materialize/Resources/Public/JavaScript/Vendor/jquery.min.js
-        group = VendorJS
-        type = js
     }
     AppInitJs {
         name = app
