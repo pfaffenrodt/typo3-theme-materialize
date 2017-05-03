@@ -1,0 +1,10 @@
+.header-nav {
+  @extend .white;
+  &.invert {
+    @extend .black;
+  }
+
+  .button-collapse {
+    color: $primary-color;
+  }
+}

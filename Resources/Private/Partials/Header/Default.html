@@ -2,9 +2,9 @@
       xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<nav class="white" role="navigation">
+<nav class="header-nav {f:if(condition:settings.header.invert,then:'invert')}" role="navigation">
     <div class="nav-wrapper container">
-        <f:render partial="Logo" arguments="{_all}"/>
+        <f:render partial="Header/Logo" arguments="{_all}"/>
 
         <v:page.menu class="right hide-on-med-and-down" pageUid="{settings.navigationPid}">
         </v:page.menu>

@@ -5,10 +5,14 @@
 
 <f:section name="Configuration">
 
-    <flux:field.select name="settings.header.Layout" label="Header Layout"
-                       items="{0: 'Default', 1: 'Parallax'}"
+    <flux:field.select name="settings.header.Layout"
+                       label="Header Layout"
+                       items="{0: 'Default', 1: 'Parallax', 2: 'No Header'}"
                        default="0"
-                       requestUpdate="1"/>
+                       requestUpdate="1" />
+    <flux:field.checkbox name="settings.header.invert"
+                         label="Header Invert"
+                         default="0" />
     <flux:field.file name="settings.header.parallaxBackground"
                      label="LLL:settings.header.parallaxBackground"
                      maxItems="1"
@@ -25,5 +29,7 @@
         <f:case default="1">
             <f:render partial="Header/Default" arguments="{_all}" />
         </f:case>
+        <f:case value="2"><f:comment>No header</f:comment></f:case>
+
     </f:switch>
 </f:section>
