@@ -1,0 +1,17 @@
+
+lib.fluidContent {
+    templateRootPaths {
+        templateRootPaths {
+            1 = EXT:materialize/Resources/Private/Templates/ContentCore
+            2 = {$plugin.tx_materialize.view.templateRootPath}
+        }
+        partialRootPaths {
+            1 = EXT:materialize/Resources/Private/Partials/
+            2 = {$plugin.tx_materialize.view.partialRootPath}
+        }
+        layoutRootPaths {
+            1 = EXT:materialize/Resources/Private/Layouts/
+            2 = {$plugin.tx_materialize.view.layoutRootPath}
+        }
+    }
+}

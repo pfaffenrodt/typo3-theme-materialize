@@ -1,0 +1,23 @@
+
+
+plugin.tx_materialize {
+    view {
+        templateRootPaths {
+            0 = EXT:materialize/Resources/Private/Templates/
+            1 = {$plugin.tx_materialize.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:materialize/Resources/Private/Partials/
+            1 = {$plugin.tx_materialize.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:materialize/Resources/Private/Layouts/
+            1 = {$plugin.tx_materialize.view.layoutRootPath}
+        }
+    }
+    settings {
+        homePageId = {$plugin.tx_materialize.settings.pageId.home}
+        navigationPageId = {$plugin.tx_materialize.settings.pageId.navigation}
+        footerNavigationPid = {$plugin.tx_materialize.settings.pageId.footer}
+    }
+}

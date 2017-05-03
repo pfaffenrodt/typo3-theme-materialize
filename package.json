@@ -1,0 +1,24 @@
+{
+  "name": "materalize",
+  "version": "1.0.0",
+  "description": "Materalize typo3 theme",
+  "scripts": {
+    "install": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pfaffenrodt/typo3-theme-materialize.git"
+  },
+  "author": "Dimitri Pfaffenrodt <dimitri@pfaffenrodt.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pfaffenrodt/typo3-theme-materialize/issues"
+  },
+  "homepage": "https://github.com/pfaffenrodt/typo3-theme-materialize#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-notify": "^3.0.0",
+    "gulp-ruby-sass": "^2.1.1"
+  }
+}

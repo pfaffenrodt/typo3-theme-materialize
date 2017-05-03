@@ -1,13 +1,13 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:vhs="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
 <footer class="page-footer teal">
     <div class="container">
         <div class="row">
             <div class="col l6 s12 white-text">
-                <f:format.raw>{footerContent}</f:format.raw>
+                <v:content.render column="5000" slide="-1"/>
             </div>
-            <f:render partial="FooterMenu" arguments="{footerNavigationPid:footerNavigationPid}"/>
+            <f:render partial="FooterMenu" arguments="{_all}"/>
         </div>
     </div>
     <div class="footer-copyright">

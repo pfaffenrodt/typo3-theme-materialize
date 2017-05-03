@@ -3,26 +3,26 @@
     <file source-language="en" datatype="plaintext" original="messages" product-name="materialize">
         <header/>
         <body>
-<trans-unit id="container">
-    <source>Container</source>
-</trans-unit>
-<trans-unit id="container_description">
-    <source>Containers can be used to breakup default structures and have elements use the whole viewport width instead of the limited grid.</source>
-</trans-unit>
-<trans-unit id="container_content">
-    <source>Container content</source>
-</trans-unit>
+            <trans-unit id="container">
+                <source>Container</source>
+            </trans-unit>
+            <trans-unit id="container_description">
+                <source>Containers can be used to breakup default structures and have elements use the whole viewport width instead of the limited grid.</source>
+            </trans-unit>
+            <trans-unit id="container_content">
+                <source>Container content</source>
+            </trans-unit>
 
 
-<trans-unit id="default_container">
-    <source>Default Container</source>
-</trans-unit>
-<trans-unit id="parallax_container">
-    <source>Parallax Container</source>
-</trans-unit>
-<trans-unit id="container_background">
-    <source>Background Image</source>
-</trans-unit>
+            <trans-unit id="default_container">
+                <source>Default Container</source>
+            </trans-unit>
+            <trans-unit id="parallax_container">
+                <source>Parallax Container</source>
+            </trans-unit>
+            <trans-unit id="container_background">
+                <source>Background Image</source>
+            </trans-unit>
         </body>
 
     </file>

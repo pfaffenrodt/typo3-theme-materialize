@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div class="parallax-container valign-wrapper">
+    <f:if condition="{settings.header.parallaxBackground}">
+        <div class="parallax">
+            <img src="{settings.header.parallaxBackground}" class="parallax-background"/>
+        </div>
+    </f:if>
+
+    <div class="section">
+        <div class="container">
+            <f:render partial="Header/Default" arguments="{_all}" />
+        </div>
+    </div>
+</div>

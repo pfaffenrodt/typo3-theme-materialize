@@ -1,19 +1,35 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:vhs="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-        <f:render partial="Logo" arguments="{data:data,homePageId:homePageId}"/>
-        <f:if condition="{navigationPageId}">
-        <vhs:page.menu class="right hide-on-med-and-down" pageUid="{navigationPid}">
+<f:section name="Configuration">
 
-        </vhs:page.menu>
+    <flux:field.select name="settings.header.Layout"
+                       label="Header Layout"
+                       items="{0: 'Default', 1: 'Parallax', 2: 'No Header'}"
+                       default="0"
+                       requestUpdate="1" />
+    <flux:field.checkbox name="settings.header.invert"
+                         label="Header Invert"
+                         default="0" />
+    <flux:field.file name="settings.header.parallaxBackground"
+                     label="LLL:settings.header.parallaxBackground"
+                     maxItems="1"
+                     multiple="false"
+                     showThumbnails="true"
+                     requestUpdate="true" />
+</f:section>
 
-        <vhs:page.menu id="nav-mobile" class="side-nav" pageUid="{navigationPid}">
+<f:section name="Main">
+    <f:switch expression="{settings.header.Layout}">
+        <f:case value="1">
+            <f:render partial="Header/Parallax" arguments="{_all}" />
+        </f:case>
+        <f:case default="1">
+            <f:render partial="Header/Default" arguments="{_all}" />
+        </f:case>
+        <f:case value="2"><f:comment>No header</f:comment></f:case>
 
-        </vhs:page.menu>
-        </f:if>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
+    </f:switch>
+</f:section>
